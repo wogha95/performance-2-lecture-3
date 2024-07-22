@@ -7,7 +7,10 @@ export function useIntersectionObserver(imgRef) {
       const callback = (entries, observer) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
-            entry.target.src = entry.target.dataset.src;
+            const target = entry.target;
+            const previousSibling = entry.target.previousSibling;
+            target.src = target.dataset.src;
+            previousSibling.srcset = previousSibling.dataset.srcset;
             observer.unobserve(entry.target);
           }
         })
