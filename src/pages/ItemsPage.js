@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react'
 import axios from 'axios'
+import React, { useEffect, useState } from 'react'
 
+import main_items from '../assets/main-items.jpg'
 import BannerImage from '../components/BannerImage'
 import ItemGrid from '../components/ItemGrid'
-import main_items from '../assets/main-items.jpg'
 
 function ItemsPage(props) {
 	const [items, setItems] = useState([])
@@ -23,7 +23,7 @@ function ItemsPage(props) {
 	return (
 		<div className="ItemsPage -mt-16">
 			<BannerImage
-				text={'Items'}
+				text={'items'}
 				image={main_items}
 			/>
 			<div className="container mx-auto py-24">
